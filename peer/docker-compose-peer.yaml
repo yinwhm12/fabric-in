@@ -59,7 +59,7 @@ services:
       - GOPATH=/opt/gopath
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
       - CORE_LOGGING_LEVEL=DEBUG
-      - CORE_PEER_ID=examplecli
+      - CORE_PEER_ID=peer0.org1.example.com
       - CORE_PEER_ADDRESS=peer0.org1.example.com:7051
       - CORE_PEER_LOCALMSPID=Org1MSP
       - CORE_PEER_TLS_ENABLED=true
@@ -70,7 +70,7 @@ services:
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     volumes:
         - /var/run/:/host/var/run/
-        - ../chaincode/go/:/opt/gopath/src/github.com/hyperledger/fabric/example/chaincode/go
+        - ./chaincode/go/:/opt/gopath/src/github.com/hyperledger/fabric/example/chaincode/go
         - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
         - ./scripts:/opt/gopath/src/github.com/hyperledger/fabric/peer/scripts/
         - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
