@@ -34,22 +34,22 @@ services:
 #      - "orderer2.example.com:10.0.200.113"
 #      - "orderer3.example.com:10.0.200.114"
 #      - "peer1.org2.example.com:10.0.200.116"
-#      - "peer1.org1.example.com:14.116.179.191"
+      - "peer1.org1.example.com:14.116.179.191"
 #      - "peer0.org2.example.com:10.0.200.115"
 
-#  peer1.org1.example.com:
-#    container_name: peer1.org1.example.com
-#    extends:
-#      file:  base/docker-compose-base.yaml
-#      service: peer1.org1.example.com
-#    environment:
-#      - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
-#      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb1.org1.example.com:5984
-  #  depends_on:
-   #   -  couchdb1.org1.example.com
-#    extra_hosts:
-#      - "orderer.example.com:14.116.179.195"
- #     - "peer0.org1.example.com:14.116.179.191"
+  peer1.org1.example.com:
+    container_name: peer1.org1.example.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer1.org1.example.com
+    environment:
+      - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb1.org1.example.com:5984
+    depends_on:
+      -  couchdb1.org1.example.com
+    extra_hosts:
+      - "orderer.example.com:14.116.179.195"
+      - "peer0.org1.example.com:14.116.179.191"
 
   cli:
     container_name: cli
@@ -77,7 +77,7 @@ services:
         - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
     depends_on:
       - peer0.org1.example.com
-#      - peer1.org1.example.com
+      - peer1.org1.example.com
     extra_hosts:
       - "orderer.example.com:14.116.179.195"
 #      - "peer0.org1.example.com:14.116.179.191"
