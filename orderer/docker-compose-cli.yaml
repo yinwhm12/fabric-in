@@ -106,6 +106,12 @@ services:
       - kafka1
       - kafka2
       - kafka3
+    extra_hosts:
+      - "orderer.example.com:14.116.179.195"
+      - "peer0.org1.example.com:14.116.179.191"
+      - "peer1.org1.example.com:14.116.179.191"
+      #      - peer0.org2.example.com
+      #      - peer1.org2.example.com
 
 #  peer0.org1.example.com:
 #    container_name: peer0.org1.example.com

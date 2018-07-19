@@ -34,7 +34,7 @@ services:
 #      - "orderer2.example.com:10.0.200.113"
 #      - "orderer3.example.com:10.0.200.114"
 #      - "peer1.org2.example.com:10.0.200.116"
-#      - "peer1.org1.example.com:10.0.200.114"
+      - "peer1.org1.example.com:14.116.179.191"
 #      - "peer0.org2.example.com:10.0.200.115"
 
   peer1.org1.example.com:
@@ -49,6 +49,7 @@ services:
    #   -  couchdb1.org1.example.com
     extra_hosts:
       - "orderer.example.com:14.116.179.195"
+      - "peer0.org1.example.com:14.116.179.191"
 
   cli:
     container_name: cli
@@ -79,9 +80,7 @@ services:
       - peer1.org1.example.com
     extra_hosts:
       - "orderer.example.com:14.116.179.195"
-#      - "orderer2.example.com:10.0.200.113"
-#      - "orderer3.example.com:10.0.200.114"
-#      - "peer0.org1.example.com:10.0.200.113"
-#      - "peer1.org1.example.com:10.0.200.114"
+      - "peer0.org1.example.com:14.116.179.191"
+      - "peer1.org1.example.com:14.116.179.191"
 #      - "peer0.org2.example.com:10.0.200.115"
 #      - "peer1.org2.example.com:10.0.200.116"
