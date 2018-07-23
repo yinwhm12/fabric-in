@@ -13,11 +13,11 @@ services:
     volumes:
       - ./chainData/couchdb/couchdb0org1:/opt/couchdb/data/couchdb0
 
-  couchdb1.org1.example.com:
-    container_name: couchdb1.org1.example.com
-    image: hyperledger/fabric-couchdb
-    volumes:
-      - ./chainData/couchdb/couchdb1org1:/opt/couchdb/data/couchdb1
+#  couchdb1.org1.example.com:
+#    container_name: couchdb1.org1.example.com
+#    image: hyperledger/fabric-couchdb
+#    volumes:
+#      - ./chainData/couchdb/couchdb1org1:/opt/couchdb/data/couchdb1
 
   peer0.org1.example.com:
     container_name: peer0.org1.example.com
